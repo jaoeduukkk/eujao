@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História dos Mágicos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .screen {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div id="screen1" class="screen">
+        <h1>O Reino dos Mágicos</h1>
+        <p>Bem-vindo ao reino dos mágicos. Aqui, você encontrará três magos com habilidades únicas. Você está pronto para começar a aventura?</p>
+        <button onclick="nextScreen('screen2')">Sim, estou pronto!</button>
+    </div>
+
+    <div id="screen2" class="screen">
+        <h1>Encontro com o Mago das Ilusões</h1>
+        <p>Você encontra o primeiro mago, que é um mestre das ilusões. Ele te pergunta:</p>
+        <p><strong>Qual é o seu truque de ilusão favorito?</strong></p>
+        <button onclick="nextScreen('screen3')">Fazer algo desaparecer</button>
+        <button onclick="nextScreen('screen4')">Criar imagens mágicas</button>
+    </div>
+
+    <div id="screen3" class="screen">
+        <h1>Fazer algo desaparecer</h1>
+        <p>O mago sorri e diz que fazer algo desaparecer é uma arte muito poderosa. Ele lhe concede um amuleto mágico. Agora, siga para o próximo mago.</p>
+        <button onclick="nextScreen('screen5')">Próximo Mago</button>
+    </div>
+
+    <div id="screen4" class="screen">
+        <h1>Criar imagens mágicas</h1>
+        <p>O mago elogia sua escolha e revela que as imagens mágicas podem enganar até os mais astutos. Ele lhe dá um pergaminho antigo. Agora, siga para o próximo mago.</p>
+        <button onclick="nextScreen('screen5')">Próximo Mago</button>
+    </div>
+
+    <div id="screen5" class="screen">
+        <h1>Encontro com o Mago do Tempo</h1>
+        <p>Você encontra o segundo mago, que controla o tempo. Ele pergunta:</p>
+        <p><strong>O que você faria se pudesse parar o tempo?</strong></p>
+        <button onclick="nextScreen('screen6')">Salvar momentos preciosos</button>
+        <button onclick="nextScreen('screen7')">Explorar o futuro</button>
+    </div>
+
+    <div id="screen6" class="screen">
+        <h1>Salvar momentos preciosos</h1>
+        <p>O mago fica impressionado com sua escolha e lhe oferece um relógio encantado. Agora, vá para o próximo mago.</p>
+        <button onclick="nextScreen('screen8')">Próximo Mago</button>
+    </div>
+
+    <div id="screen7" class="screen">
+        <h1>Explorar o futuro</h1>
+        <p>O mago lhe dá uma esfera mágica para ver visões do futuro. Agora, vá para o próximo mago.</p>
+        <button onclick="nextScreen('screen8')">Próximo Mago</button>
+    </div>
+
+    <div id="screen8" class="screen">
+        <h1>Encontro com o Mago da Transformação</h1>
+        <p>Você encontra o terceiro mago, que pode transformar objetos em ouro. Ele pergunta:</p>
+        <p><strong>Se você pudesse transformar algo, o que escolheria?</strong></p>
+        <button onclick="endStory()">Transformar objetos em ouro</button>
+        <button onclick="endStory()">Criar algo novo</button>
+    </div>
+
+    <div id="end" class="screen">
+        <h1>Conclusão</h1>
+        <p>Os três magos lhe deram presentes mágicos para suas escolhas. Eles esperam que você use suas habilidades para fazer o bem. Parabéns por completar a aventura!</p>
+    </div>
+
+    <script>
+        function nextScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.style.display = 'none';
+            });
+            document.getElementById(screenId).style.display = 'block';
+        }
+
+        function endStory() {
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.style.display = 'none';
+            });
+            document.getElementById('end').style.display = 'block';
+        }
+        
+        // Iniciar a história
+        document.getElementById('screen1').style.display = 'block';
+    </script>
+</body>
+</html>
